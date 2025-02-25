@@ -11,7 +11,9 @@
 input {
   font-size: 1rem;
   border: hidden;
+  border-radius: 1rem;
   text-align: center;
+  margin: .5rem;
 }
 
 input:focus {
@@ -53,11 +55,16 @@ input:focus {
 
 .expense {
   background-color: bisque;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template: 1fr / 8fr 1fr .5fr;
+  align-items: center;
   border-radius: 5rem;
   margin: .25rem;
-  padding: .5rem;
+  padding: .25rem .5rem;
+}
+
+.delete-button {
+  margin-left: .5rem;
 }
 
 .total {
@@ -76,6 +83,7 @@ input:focus {
 
 .enter-button {
   padding: .25rem .5rem;
+  margin: .5rem;
   font-size: 1rem;
   border: hidden;
   border-radius: 5rem;

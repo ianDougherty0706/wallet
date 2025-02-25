@@ -12,12 +12,18 @@
         <div id="userInput" class="user-input">
           <input type="text" placeholder="$0.00" autocomplete="off" id="priceInput" class="price-input" />
           <input type="text" placeholder="Label (optional)" autocomplete="off" id="labelInput" class="label-input" />
-          <button id="enterButton" class="enter-button">Enter</button>
+          <button type="submit" id="enterButton" class="enter-button">Enter</button>
         </div>
         <div id="output" class="output">
+          <div class="expense">
+            <div class="expense-label">A Label</div>
+            <div class="price">$2.99</div>
+            <i id="deleteButton" class="nf nf-oct-x delete-button"></i>
+          </div>
           <div id="total" class="total">
             <p>Total Money Spent:</p>
             <div id="totalValue" class="total-value">$0.00</div>
+          </div>
         </div>
       </section>
     </div>
