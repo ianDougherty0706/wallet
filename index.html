@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>Codespaces</title>
+  </head>
+  <body>
+    <div id="viewport" class="viewport">
+      <section id="app" class="app">
+        <div id="userInput" class="user-input">
+          <span>$</span><input type="text" placeholder="0.00" id="priceInput" class="price-input" />
+          <input type="text" placeholder="Label (optional)" id="nameInput" class="name-input" />
+          <button id="enterButton" class="enter-button">Enter</button>
+        </div>
+        <div id="output" class="output">
+          <div class="expense">
+            <div class="expense-label">Some Category</div>
+            <div class="price">$2.79</div>
+          </div>
+          <div id="total" class="total">
+            <p>Total Money Spent:</p>
+            <div id="totalValue" class="total-value">$2.79</div>
+        </div>
+      </section>
+    </div>
+    <script src="app/script.js"></script>
+  </body>
+</html>
