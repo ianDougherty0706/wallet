@@ -1,3 +1,7 @@
+const priceInput = document.getElementById("priceInput");
+const labelInput = document.getElementById("labelInput");
+const enterButton = document.getElementById("enterButton");
+const output = document.getElementById('output');
 
 /**
  * This function will take a raw number containing text (that would come from eronious user input),
@@ -11,10 +15,10 @@ function extractNumber(stringNumber) {
   let numbersArray = [];
   let stripLeadingZero = true;
   for (let i = 0; i < stringNumberLen; i++) {
-    if (stringNumber[i] !== "0") {
+    if (stringNumber[i+1] !== "0") {
       stripLeadingZero = false;
     }
-    if (!stripLeadingZero && stringNumber[i] !== "," && stringNumber[i] !== ".") {
+    if (!stripLeadingZero && stringNumber[i] !== "," && stringNumber[i] !== "." && stringNumber[i] !== '$') {
       numbersArray.push(stringNumber[i]);
     }
   }
@@ -46,15 +50,39 @@ function makeProperNumber(arrayNumber) {
     }
     count++;
   }
-  const formattedInt = wholeIntComma + decimalInt;
+  const formattedInt = `$${wholeIntComma}${decimalInt}`;
   return formattedInt;
 }
 
+function resetInputFields() {
+  priceInput.value = '';
+  labelInput.value = '';
+}
 
-const priceInput = document.getElementById("priceInput");
+function createExpenseCard(amount, label) {
+  const expense = document.createElement('div');
+  expense.classList.add('expense');
+  const expenseLabel = document.createElement('div');
+  expenseLabel.classList.add('expense-label');
+  expenseLabel.textContent = label !== ''? label : 'Expense';
+  expense.appendChild(expenseLabel);
+  const price = document.createElement('div');
+  price.classList.add('price');
+  price.textContent = amount;
+  expense.appendChild(price);
+  output.appendChild(expense);
+  resetInputFields();
+}
+
+
 
 priceInput.addEventListener("input", (e) => {
   const extractedNumber = extractNumber(e.target.value);
   const properNumber = makeProperNumber(extractedNumber);
   e.target.value = properNumber;
+});
+
+
+enterButton.addEventListener("click", () => {
+  createExpenseCard(priceInput.value, labelInput.value);
 });

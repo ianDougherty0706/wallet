@@ -4,24 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/styles.css" />
-    <title>Codespaces</title>
+    <title>Wallet</title>
   </head>
   <body>
     <div id="viewport" class="viewport">
       <section id="app" class="app">
         <div id="userInput" class="user-input">
-          <span>$</span><input type="text" placeholder="0.00" id="priceInput" class="price-input" />
-          <input type="text" placeholder="Label (optional)" id="nameInput" class="name-input" />
+          <input type="text" placeholder="$0.00" autocomplete="off" id="priceInput" class="price-input" />
+          <input type="text" placeholder="Label (optional)" autocomplete="off" id="labelInput" class="label-input" />
           <button id="enterButton" class="enter-button">Enter</button>
         </div>
         <div id="output" class="output">
-          <div class="expense">
-            <div class="expense-label">Some Category</div>
-            <div class="price">$2.79</div>
-          </div>
           <div id="total" class="total">
             <p>Total Money Spent:</p>
-            <div id="totalValue" class="total-value">$2.79</div>
+            <div id="totalValue" class="total-value">$0.00</div>
         </div>
       </section>
     </div>
