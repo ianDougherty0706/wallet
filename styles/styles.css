@@ -20,6 +20,11 @@ input:focus {
   outline: none;
 }
 
+.hidden {
+  visibility: hidden;
+  height: 0;
+}
+
 .viewport{
   height: 100dvh;
   width: 100dvw;
@@ -50,21 +55,50 @@ input:focus {
 }
 
 .output {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
 }
 
-.expense {
+.expense-container {
   background-color: bisque;
-  display: grid;
-  grid-template: 1fr / 8fr 1fr .5fr;
-  align-items: center;
-  border-radius: 5rem;
-  margin: .25rem;
+  border-radius: .25rem;
   padding: .25rem .5rem;
+  margin: .25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
 }
 
-.delete-button {
-  margin-left: .5rem;
+.expense {
+  display: grid;
+  grid-template: 1fr / 8fr 1fr 2ch;
+  column-gap: .25rem;
+  width: 100%;
+  align-items: center;
+}
+
+.delete-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.expense-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0.25rem 1rem;
+  background-color: bisque;
+}
+
+.details-arrow-continer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .total {

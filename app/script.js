@@ -59,8 +59,22 @@ function resetInputFields() {
   labelInput.value = "";
 }
 
+const Data = Object.freeze({
+  ADD: 0,
+  DEL: 1
+});
+
+let expenseList = [];
+
+function handleData(inputData, method){
+  if (method === Data.ADD) {
+    expenseList.push(inputData);
+  }
+}
+
 function createExpenseCard(amount, label) {
   if (priceInput.value) {
+    handleData([amount, label], Data.ADD);
     const expense = document.createElement("div");
     expense.classList.add("expense");
     const expenseLabel = document.createElement("div");
@@ -72,7 +86,7 @@ function createExpenseCard(amount, label) {
     price.textContent = amount;
     expense.appendChild(price);
     const deleteButton = document.createElement("i");
-    deleteButton.classList.add("nf", "nf-oct-x", "delete-button");
+    deleteButton.classList.add("nf", "nf-md-delete", "delete-button");
     deleteButton.addEventListener("click", (e) => {
       e.target.parentElement.remove();
     });
